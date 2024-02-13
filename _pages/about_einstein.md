@@ -1,4 +1,4 @@
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+ I am a 4th year undergraduate student researcher in the Electrical Engineering Department at University of California, Los Angeles working at the [Visual Machines Group (VMG)](https://visual.ee.ucla.edu/) under [Professor Achuta Kadambi](https://www.ee.ucla.edu/achuta-kadambi/). My research interests are centered on the intersection of computer vision and generative ai. More specifically, I am currently focused on utilizing novel computational algorithms and graphics models to enhance synthetic data generation within the context of eye tracking.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
