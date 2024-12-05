@@ -43,20 +43,20 @@
                 <header class="major">
                     <h1>Modular Gas Sensor Shell</h1>
                     <p>
-                        I designed a gas sensor shell to 1) store an array of sensors oriented correctly relative to the gas flow 2) have enough space to
-                        accomadate wiring, a PCB and a headless Raspberry Pi 3) be modular to add/remove sensors if needed.
+                        From June of 2022 to October of 2022, I designed and 3D-printed a modular gas sensor shell (E-nose) that stores a Raspberry Pi Zero 2W and 17 gas sensors to 
+                        identify chemical signatures (volatile organic compounds, temperature, humidity) humans perceive as ”smells”.
                     </p>
                 </header>
 
                 <div class="image main">
                     <h2>Design Specifications</h2>
                     <ul>
-                        <li> 1. The PCB and Raspberry Pi should not block gas flow, gas sensors must be properly oriented, and the product must be lightweight (less than 1kg).</li>
-                        <li> 2. The product must be modular and store a PCB, Raspberry Pi Zero 2W, and wirings necessary for all the sensors.</li>
-                        <li> 3. The gas sensor shell can be independently removed without removing the PCB, Raspberry Pi Zero 2W, the wires, and the sensors.</li>
+                        <li> 1. There must be uninterrupted gas flow with the gas sensors properly oriented for measurements</li>
+                        <li> 2. The product must be modular and lightweight (less than 1kg).</li>
+                        <li> 3. The sensors, the wiring and the motherboard should be protected by a modular and easy-to-remove gas sensor shell.</li>
                     </ul>
 
-                    <h2>Current Design Considerations</h2>
+                    <h2>Design Considerations</h2>
 
                     <p>
                         <div class="row">
@@ -66,16 +66,16 @@
                                     <img src="images/EnoseExplode.jpg" alt="" />
                                     <p>
                                         <i>
-                                            <b>Figure 1:</b> The parts on the rightside are "chambers". They are modular and hold the PCB, Raspberry Pi Zero 2W, and all of the sensors.
-                                            The chamber structure is then placed inside the "shell structures" on the leftside which are also modular. The shell structure protects the mentioned components and stores necessary wiring.
-                                            The legs at the bottom hold up the gas sensor.
+                                            <b>Figure 1:</b> The parts on the rightside of the image are "chambers". They are modular and hold the PCB, Raspberry Pi Zero 2W, and all of the sensors.
+                                            The resulting stacked chamber structure is then placed inside the "shell structures" on the leftside of the image. The resulting stacked shell structure, which is also modular, protects the mentioned components and stores necessary wiring.
+                                            The legs at the bottom hold up the gas sensor, so that gas can flow from the bottom of the sensor and exit from the top.
                                         </i>
                                     </p>
                                 </span>
                             </div>
                         </div>
 
-                        Currently, the Modular Gas Sensor Shell stores 17 sensors:
+                        The Modular Gas Sensor Shell stores 17 sensors:
                         <ul>
                             <li>DFRobot CO2 Sensor V1.2</li>
                             <li>DHT22 Temperature and Humidity Sensor</li>
@@ -87,15 +87,14 @@
                             <li>MH-Z14 NDIR CO2 Infrared Sensor Module MH-Z14A Carbon Dioxide Sensor for CO2 (0-5000ppm, Serial Spot PWM)</li>
                             <li>MQ-2, MQ-3, MQ-4, MQ-5, MQ-6, MQ-7, MQ-8, MQ-9, MQ-135 Smoke Detection liquefied Methane Gas Sensor Module</li>
                         </ul>
-                        The data gathered from the sensors listed above during the cooking process will constitute a chemical signature which will be used to analyze the cumulative gas concentration
+                        The data gathered from the sensors listed above during the cooking process will constitutes a chemical signature which is used to analyze the cumulative gas concentration
                         with respect to time. The gas sensor shell stores these sensors, and the hardware which extracts and processes data which includes a custom PCB and a Raspberry Pi Zero 2W.
-                        When designing the gas sensor shell, much consideration was given to requirement 3. Both the chamber and shell structures have "lips" on top of them, making the structure
-                        modular - allowing the use of any amount of gas sensors. One challenge I faced was designing a gas sensor shell that could be removed without removing the Raspberry Pi Zero 2W and the PCB
-                        (these components were stored within the shell in the previous design made by my graduate student mentor). To overcome this, I used the concept of a dummy node from my data structures
-                        and algorithms class: I made a special chamber sturcture that stores the PCB and the Raspberry Pi instead of gas sensors- satisfying requirements 2 and 3. Furthermore, beacuse the PCB and Raspberry Pi are on
+                        When designing the gas sensor shell, much consideration was given to requirement 2 and 3. Both the chamber and shell structures have "lips" on top of them, making the structure
+                        modular and easy to customize - allowing the use of any amount of gas sensors. One challenge I faced was designing a gas sensor shell that could be removed without removing the Raspberry Pi Zero 2W and the motherboard. To overcome this, I used the concept of a dummy node from my data structures
+                        and algorithms class: I made a special chamber sturcture that stores the PCB and the Raspberry Pi instead of gas sensors. Furthermore, beacuse the motherboard and Raspberry Pi are on
                         the side of the special chamber they do not interfere with the gas flow. The rest of the chambers have various holes on the side where gas sensors will fit and face towards the gas flow.
                         In addition to all of this, There is a LCD display attached to the topmost gas sensor shell structure which allows the user to view any given gas concentration. There are also rectangular
-                        cutouts on the top and bottom caps of the gas sensor shell which is designed to store fans if the gas flow is not fast enough. Finally, All parts are mode from ABS plastic and have a total mass of 830.70 grams - satisfying requirement 1.
+                        cutouts on the top and bottom caps of the gas sensor shell which is designed to store fans if the gas flow is not fast enough. Finally, All parts are mode from ABS plastic and have a total mass of 830.70 grams.
                         <br /> <br />
                         <div class="row">
                             <div class="col-3"><span></span></div>
@@ -115,16 +114,16 @@
                         The PCB is displayed on figure 2. On the left side of the PCB  are functional buttons that are for general purpose use. One set of buttons will be used for triggering
                         data collection and stopping data collection. On the upper rightside of the PCB is a power supply aux for an external power source which will power the sensors because
                         the Raspberry Pi Zero cannot power all the sensors by itself. The bottom part of the PCB are connections for the ADC converters and gas sensors that use the I2C protocol.
-                        The bottom rightside of the PCB has optional transistor and pins that will be used to power a fan if gas flow is not sufficient. THe cut out holes and rectangles on the
+                        The bottom rightside of the PCB has optional transistor and pins that will be used to power a fan if gas flow is not sufficient. The cut out holes and rectangles on the
                         top face of the gas sensor shell are made to store the buttons and the power supply aux mentioned here.<br /> <br />
 
                         <h2>Ending Remarks</h2>
 <p>
-                        A significant portion of this project was configuring the Raspberry Pi Zero 2W system by installing Raspbian Lite, setting up an SSH connection and writing the python script
-                        that will be used for data collection. Modular Gas Sensor Shell CAD files, links to documentation and python files for each sensor, necessary installations, and the python file
-                        that will be used to collect data can be found <a href="https://github.com/Selim-Emir-Can/RoMeLa-YORI-Team-ModularGasSensor" target="_blank">here</a>. I have already 3D printed the
-                        Modular Gas Sensor as of now and will keep updating this webpage. Testing will begin according to the YORI Team schedule and the Modular Gas Sensor will be used by the YORI (RoMeLa) team cooking
-                        robot. Here are links a few links about the cooking robot for anyone who is interested:
+                        Through this experience, I communicated my design ideas to an interdisciplinary research team and executed on my original ideas by 3D printing my designs in the Makers Space at UCLA.
+                        I learned how to configure embedded systems (the Raspberry Pi Zero 2W system, Raspbian OS Lite), and familiarized myself with communication protocols (I2C, UART, SPI) and sensor synchronization.
+                        Modular Gas Sensor Shell CAD files, links to documentation and python files for each sensor, necessary installations, and the python file
+                        that were used to collect data can be found <a href="https://github.com/Selim-Emir-Can/RoMeLa-YORI-Team-ModularGasSensor" target="_blank">here</a>. I have already 3D printed the
+                        Modular Gas Sensor for RoMeLa. Here are links a few links about the cooking robot for anyone who is interested:
                         <ul>
                             <li>
                                 <a href="pdfs/Task Planning with Mixed-Integer Programming for Multiple Cooking.pdf" target="_blank">
