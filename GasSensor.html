@@ -43,7 +43,7 @@
                 <header class="major">
                     <h1>Modular Gas Sensor Shell</h1>
                     <p>
-                        From June of 2022 to October of 2022, I designed and 3D-printed a modular gas sensor shell (E-nose) that stores a Raspberry Pi Zero 2W and 17 gas sensors to 
+                        From June of 2022 to October 1st of 2022, I designed and 3D-printed a modular gas sensor shell (E-nose) that stores a Raspberry Pi Zero 2W and 17 gas sensors to 
                         identify chemical signatures (volatile organic compounds, temperature, humidity) humans perceive as ”smells”.
                     </p>
                 </header>
@@ -101,14 +101,22 @@
                             <li>MH-Z14 NDIR CO2 Infrared Sensor Module MH-Z14A Carbon Dioxide Sensor for CO2 (0-5000ppm, Serial Spot PWM)</li>
                             <li>MQ-2, MQ-3, MQ-4, MQ-5, MQ-6, MQ-7, MQ-8, MQ-9, MQ-135 Smoke Detection liquefied Methane Gas Sensor Module</li>
                         </ul>
-                        The data gathered from the sensors listed above during the cooking process will constitutes a chemical signature which is used to analyze the cumulative gas concentration
-                        with respect to time. The gas sensor shell stores these sensors, and the hardware which extracts and processes data which includes a custom PCB and a Raspberry Pi Zero 2W.
-                        When designing the gas sensor shell, much consideration was given to requirement 2 and 3. Both the chamber and shell structures have "lips" on top of them, making the structure
-                        modular and easy to customize - allowing the use of any amount of gas sensors. One challenge I faced was designing a gas sensor shell that could be removed without removing the Raspberry Pi Zero 2W and the motherboard. To overcome this, I used the concept of a dummy node from my data structures
-                        and algorithms class: I made a special chamber sturcture that stores the PCB and the Raspberry Pi instead of gas sensors. Furthermore, beacuse the motherboard and Raspberry Pi are on
-                        the side of the special chamber they do not interfere with the gas flow. The rest of the chambers have various holes on the side where gas sensors will fit and face towards the gas flow.
-                        In addition to all of this, There is a LCD display attached to the topmost gas sensor shell structure which allows the user to view any given gas concentration. There are also rectangular
-                        cutouts on the top and bottom caps of the gas sensor shell which is designed to store fans if the gas flow is not fast enough. Finally, All parts are mode from ABS plastic and have a total mass of 830.70 grams.
+
+                        <p>
+                            The gas sensor shell houses all components required for data collection and processing: the gas sensors mentioned above, Raspberry Pi Zero 2W, a custom PCB, and an LCD display. 
+                            The hardware is constructed from ABS plastic, ensuring durability while keeping the overall system lightweight at 830.70 grams. The shell features a modular design with "lips"
+                            on the top of both the chamber and shell structures, allowing easy customization and the use of any number of gas sensors (inspired by the concept of linked lists). The topmost
+                            node in the structure houses a custom PCB and a Raspberry Pi Zero 2W which handles all the data processing instead of collecting data (inpspired by the concept of a dummy node).
+                            The shell corresponding to this node houses an LCD display that can be used to visualize the object(s) associated with the measured chemical signature or display relevant gas concentrations.
+                            The shell's top and bottom caps include rectangular cutouts designed to accommodate fans, which can be installed to enhance gas flow if necessary.
+                        </p>
+
+                        <p>
+                            The system's core functionality relies on multiple gas sensors that collect data to form a chemical signature associated with the underlying process
+                            (i.e. cooking food, perfume, smoke, etc...). The chambers are equipped with side holes where the gas sensors are securely mounted, ensuring optimal
+                            alignment with the gas flow.
+                        </p>
+
                         <br /> <br />
                         <div class="row">
                             <div class="col-3"><span></span></div>
@@ -125,11 +133,15 @@
                             </div>
                         </div>
 
-                        The PCB is displayed on figure 2. On the left side of the PCB  are functional buttons that are for general purpose use. One set of buttons will be used for triggering
-                        data collection and stopping data collection. On the upper rightside of the PCB is a power supply aux for an external power source which will power the sensors because
-                        the Raspberry Pi Zero cannot power all the sensors by itself. The bottom part of the PCB are connections for the ADC converters and gas sensors that use the I2C protocol.
-                        The bottom rightside of the PCB has optional transistor and pins that will be used to power a fan if gas flow is not sufficient. The cut out holes and rectangles on the
-                        top face of the gas sensor shell are made to store the buttons and the power supply aux mentioned here.<br /> <br />
+                        <p>
+                            The PCB, shown in Figure 2, is designed with a range of functional components to support the system's operations. On the left side, general-purpose
+                            buttons are included, with one set designated for starting and stopping data collection. The upper-right corner of the PCB features a power supply
+                            auxiliary connector, allowing the use of an external power source to power the sensors, as the Raspberry Pi Zero 2W cannot provide sufficient power
+                            for all sensors. At the bottom, the PCB includes connections for ADC converters and gas sensors that communicate using the I2C protocol. Additionally,
+                            the bottom-right corner houses optional transistors and pins designed to power a fan, which can be activated if gas flow needs to be enhanced. Cutout
+                            holes and rectangular slots on the top face of the gas sensor shell are precisely aligned to accommodate the buttons and power supply auxiliary connector,
+                            ensuring a seamless and functional design.
+                        </p><br /> <br />
 
                         <h2>Ending Remarks</h2>
 <p>
